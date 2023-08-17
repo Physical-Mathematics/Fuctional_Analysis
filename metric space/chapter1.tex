@@ -1,0 +1,80 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{multicol}
+
+\setmainfont{Times New Roman}
+\title{Metric Space}
+\author{Yang}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\section{Metric Space}
+
+\subsection{Definition}
+A metric space is a pair (\textit{X},\textit{d}), where \textit{X} is a set and d is a 
+metric on \textit{X} (or \textit{distance function} on \textit{X}), that is, a
+function defined on \textit{X} $\times$ \textit{X} such that for all x,y,z $\in$ \textit{X} we have:
+\begin{itemize}
+\item[1.] \textit{d} is real-valued, finite and nonnegative. 
+\item[2.] \textit{d}(x,y) = 0 \textbf{if and only if } x = y. 
+\item[3.] \textit{d}(x,y) = \textit{d}(y,x)
+\item[4.] \textit{d}(x,y) $\leq$ \textit{d}(x,z) + \textit{d}(z,y)
+\end{itemize}
+
+\subsection{Subspace}
+A \textbf{subspace} (\textit{Y},$\widetilde{\textit{d}}$) of (\textit{X},d) is obtained if
+we take a subset \textit{Y} $\subset$ \textit{X} and restrict \textit{d} to
+$Y \times Y$ is the restriction
+$$ \widetilde{d} = d \lvert_{Y \times Y} $$
+$\widetilde{\textit{d}}$ is called the metric induced on \textit{Y} by \textit{d}.
+
+\subsection{Examples}
+\begin{tabular}{cc}
+Real line R & \textit{d}(x,y) = $\lvert x - y \rvert$ \\
+Euclidean space $R^n$, unitary space $C^n$, complex C & \textit{d}(x,y) = $\sqrt{
+    (\xi_1 - \eta_1)^2 + \dots + (\xi_n-\eta_n)^2
+    }$\\
+Sequence space $l^{\infty}$(bounded) & $\textit{d}(x,y)=\sup\limits_{j \in N} \lvert
+\xi_j - \eta_j \rvert$\\
+Function space C[a,b].(continuous) & $\textit{d}(x,y)=\max\limits_{t \in J}\lvert
+x(t)-y(t)\rvert$ \\
+Discrete metric space & $d(x,x)=0$,  $d(x,y)=1$  $(x\neq y)$\\
+Sequence space s & $
+d(x,y) = \sum\limits_{j=1}^{\infty} \frac{1}{2^j} \frac{\lvert \xi_j - \eta_j
+\rvert}{1+\lvert \xi_j - \eta_j \rvert}
+$\\
+Space B(A) of bounded functions & $d(x,y)=\sup\limits_{t\in A}
+\lvert x(t)-y(t)\rvert$ \\
+Space $l^p$ & $d(x,y)=(\sum\limits_{j=1}^{\infty}{\lvert \xi_j - \eta_j \rvert}
+^p)^{1/p}$ 
+\end{tabular}
+
+\section{Open set, Closed set, Neighborhood}
+\subsection{Ball and Sphere}
+Definition: Given a point $x_0 \in X$ and a real number $r > 0$, we define
+three types of set:
+\begin{enumerate}
+\item[(a)] $B(x_0;r) = \{x\in X \vert d(x,x_0) < r\}$  (Open shell) 
+\item[(b)] $\widetilde{B}(x_0;r) = \{x\in X \vert d(x,x_0) \leq r\}$  (Closed shell)
+\item[(c)] $S(x_0;r) = \{x\in X \vert d(x,x_0) = r\}$  (Sphere)
+\end{enumerate}
+We see that an open ball of radius $r$ is the set of all points in $X$ whose
+distance from the center of the ball is less than $r$. Furthermore, the definition immediately
+implies that
+$$ S(x_0;r)=\widetilde{B}(x_0;r)-B(x_0;r)$$
+
+\subsection{Open set and Closed set}
+A subset $M$ of a metric space $X$ is said to be \textit{\textbf{open}} if it contains a ball
+about each of its points.\\
+A subset $K$ of $X$ is said to \textit{\textbf{closed}} if its complement (in $X$) is
+open, that is, $K^C =X-K$ is open.\\
+An open ball $B(x_0;\epsilon)$ of radius $\epsilon$ is often called an 
+\textit{\textbf{$\epsilon$ - neighborhood}} of $x_0$.\\
+
+\end{document}
